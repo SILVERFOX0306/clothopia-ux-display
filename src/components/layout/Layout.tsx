@@ -12,11 +12,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, className, fullWidth = false }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       <main className={cn(
-        "flex-grow",
-        !fullWidth && "max-w-7xl mx-auto w-full",
+        "flex-grow py-4",
+        !fullWidth && "container mx-auto px-4",
         className
       )}>
         {children}
