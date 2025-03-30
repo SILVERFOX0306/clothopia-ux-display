@@ -68,7 +68,7 @@
   }
   
   .nav-link::after {
-    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-hype-pink transition-all duration-300 ease-in-out;
+    @apply content-[''] absolute left-0 -bottom-1 w-0 h-0.5 bg-hype-pink transition-all duration-300 ease-out;
   }
   
   .nav-link:hover::after {
@@ -89,6 +89,32 @@
   
   .color-swatch.active {
     @apply ring-2 ring-offset-2 ring-hype-blue;
+  }
+
+  /* Elegant hover effects */
+  .elegant-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .elegant-hover::before {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-hype-pink transition-all duration-500 ease-out;
+  }
+
+  .elegant-hover:hover::before {
+    @apply w-full;
+  }
+
+  .image-hover {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .image-hover:hover {
+    @apply scale-105;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:translate-y-[-5px] hover:shadow-lg;
   }
 }
 
