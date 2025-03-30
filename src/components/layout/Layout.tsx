@@ -15,8 +15,8 @@ const Layout: React.FC<LayoutProps> = ({ children, className, fullWidth = false 
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       <main className={cn(
-        "flex-grow py-0",
-        !fullWidth && "container mx-auto px-4",
+        "flex-grow",
+        !fullWidth && "container mx-auto px-4 md:px-6 lg:px-8",
         className
       )}>
         {children}

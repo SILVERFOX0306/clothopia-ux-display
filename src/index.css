@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -50,6 +49,8 @@
   
   body {
     @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   /* Typography enhancements */
@@ -85,7 +86,7 @@
   
   /* Navigation */
   .nav-link {
-    @apply relative text-foreground hover:text-hype-pink transition-colors duration-200;
+    @apply relative text-foreground hover:text-hype-pink transition-colors duration-300;
   }
   
   .nav-link::after {
@@ -96,13 +97,13 @@
     @apply w-full;
   }
   
-  /* Buttons */
+  /* Buttons with improved transitions */
   .btn-primary {
-    @apply bg-hype-pink hover:bg-hype-purple text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 shadow-sm hover:shadow;
+    @apply bg-hype-pink hover:bg-hype-purple text-white font-medium py-2 px-4 rounded-md transition-all duration-300 shadow-sm hover:shadow transform hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply bg-transparent hover:bg-hype-blue/10 border border-hype-blue text-hype-blue font-medium py-2 px-4 rounded-md transition-colors duration-200;
+    @apply bg-transparent hover:bg-hype-blue/10 border border-hype-blue text-hype-blue font-medium py-2 px-4 rounded-md transition-all duration-300;
   }
   
   /* Color swatches */
@@ -144,7 +145,7 @@
     @apply transition-all duration-300 ease-out hover:translate-y-[-5px] hover:shadow-lg;
   }
   
-  /* Collection cards */
+  /* Collection cards with improved animations */
   .collection-card {
     @apply relative overflow-hidden rounded-lg;
   }
@@ -165,9 +166,9 @@
     @apply absolute bottom-0 left-0 right-0 p-6 text-white translate-y-4 opacity-0 transition-all duration-300 z-10;
   }
   
-  /* Form elements */
+  /* Form elements with improved focus states */
   input, textarea, select {
-    @apply focus:ring-hype-pink focus:border-hype-pink;
+    @apply focus:ring-hype-pink focus:border-hype-pink focus:ring-2 transition-all duration-300;
   }
   
   /* Page transitions */

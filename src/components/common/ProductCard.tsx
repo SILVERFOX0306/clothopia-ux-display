@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Link 
       to={`/product/${product.id}`}
-      className="product-card block"
+      className="product-card block rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-2 right-2 bg-white/70 backdrop-blur-sm rounded-full hover:bg-white"
+          className="absolute top-2 right-2 bg-white/70 backdrop-blur-sm rounded-full hover:bg-white transition-colors"
           onClick={toggleFavorite}
         >
           <Heart 
@@ -54,12 +54,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         )}
       </div>
       
-      <div className="p-4">
-        <h3 className="font-medium text-base">{product.name}</h3>
+      <div className="p-3 sm:p-4">
+        <h3 className="font-medium text-sm sm:text-base line-clamp-1">{product.name}</h3>
         <div className="flex items-baseline mt-1 space-x-2">
-          <span className="font-semibold">${product.price.toFixed(2)}</span>
+          <span className="font-semibold text-sm sm:text-base">${product.price.toFixed(2)}</span>
           {product.originalPrice > 0 && (
-            <span className="text-gray-500 line-through text-sm">${product.originalPrice.toFixed(2)}</span>
+            <span className="text-gray-500 line-through text-xs sm:text-sm">${product.originalPrice.toFixed(2)}</span>
           )}
         </div>
         
@@ -67,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           {product.colors.map((color, index) => (
             <div 
               key={index} 
-              className="w-3 h-3 rounded-full" 
+              className="w-2 h-2 sm:w-3 sm:h-3 rounded-full" 
               style={{ backgroundColor: color }}
             />
           ))}
@@ -75,9 +75,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </div>
       
       {isHovered && (
-        <div className="product-actions absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 opacity-100 translate-y-0 transition-all duration-300">
-          <Button className="w-full bg-white text-black hover:bg-hype-yellow hover:text-black">
-            <ShoppingCart className="mr-2 h-4 w-4" />
+        <div className="product-actions absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-2 sm:p-3 opacity-100 translate-y-0 transition-all duration-300">
+          <Button className="w-full bg-white text-black hover:bg-hype-yellow hover:text-black text-xs sm:text-sm transition-colors">
+            <ShoppingCart className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             Add to Cart
           </Button>
         </div>
