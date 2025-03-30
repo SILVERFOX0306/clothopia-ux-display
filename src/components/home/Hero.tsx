@@ -5,14 +5,22 @@ import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative h-[70vh] md:h-[80vh] bg-black flex items-center">
-      <div className="absolute inset-0 z-0">
+    <section className="relative h-[80vh] bg-black flex items-center">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-10" />
-        <img
-          src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1905&auto=format&fit=crop"
-          alt="Hero"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover object-center"
-        />
+        >
+          <source 
+            src="https://player.vimeo.com/external/517090061.sd.mp4?s=ae49de3527da18c766ae4f9596fd894d6a4d3431&profile_id=164&oauth2_token_id=57447761" 
+            type="video/mp4" 
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
       
       <div className="container mx-auto px-4 z-10 relative">

@@ -28,9 +28,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     >
       <div className="relative overflow-hidden aspect-[3/4]">
         <img 
-          src={isHovered && product.images.length > 1 ? product.images[1] : product.images[0]} 
+          src={product.images[0]} 
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
+          className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
         />
         <Button
           variant="ghost"
@@ -74,12 +74,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
       
-      <div className="product-actions">
-        <Button className="w-full bg-white text-black hover:bg-hype-yellow hover:text-black">
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          Add to Cart
-        </Button>
-      </div>
+      {isHovered && (
+        <div className="product-actions absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-3 opacity-100 translate-y-0 transition-all duration-300">
+          <Button className="w-full bg-white text-black hover:bg-hype-yellow hover:text-black">
+            <ShoppingCart className="mr-2 h-4 w-4" />
+            Add to Cart
+          </Button>
+        </div>
+      )}
     </Link>
   );
 };

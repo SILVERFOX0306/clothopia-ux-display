@@ -8,11 +8,13 @@ import Layout from '@/components/layout/Layout';
 
 const Index: React.FC = () => {
   return (
-    <Layout>
+    <Layout fullWidth>
       <Hero />
-      <FeaturedProducts />
-      <CategoryGrid />
-      <Newsletter />
+      <div className="container mx-auto px-4">
+        <FeaturedProducts />
+        <CategoryGrid />
+        <Newsletter />
+      </div>
     </Layout>
   );
 };

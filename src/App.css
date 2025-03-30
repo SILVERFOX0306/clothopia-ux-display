@@ -1,1 +1,13 @@
+
 /* This file is kept minimal as we're using Tailwind CSS for styling */
+
+/* Additional video background styles */
+.video-background {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
